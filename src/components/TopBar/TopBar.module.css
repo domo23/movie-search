@@ -11,6 +11,10 @@
   .title {
     display: none;
   }
+
+  .loader {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 501px) {
