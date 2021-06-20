@@ -1,0 +1,18 @@
+.searchInput {
+    width: 100%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.searchInput:focus {
+    outline: none;
+}
