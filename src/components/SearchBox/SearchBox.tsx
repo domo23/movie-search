@@ -7,16 +7,25 @@ import styles from "./SearchBox.module.css";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
+import { FetchState } from "../../models/fetch-dispatch-action";
 
 function SearchBox() {
   const [formValue, setFormValue] = useState("");
   const dispatch = useDispatch();
-  const {setMovies} = bindActionCreators(actionCreators, dispatch);
+  const {setMovies, setFetchState} = bindActionCreators(actionCreators, dispatch);
 
   const getMovies = async function (
     filter: string
-  ): Promise<AxiosResponse<MovieApiResponse>> {
-    return await axios.get(`https://swapi.dev/api/films/?search=${filter}`);
+  ): Promise<AxiosResponse<MovieApiResponse> | undefined> {
+    try {
+      setFetchState(FetchState.LOADING);
+      const data = await axios.get(`https://swapi.dev/api/films/?search=${filter}`);
+      setFetchState(FetchState.SUCCESS);
+      return data;
+    } catch (error) {
+      console.error(error);
+      setFetchState(FetchState.ERROR);
+    }  
   };
 
   const handleChange = async function (
@@ -26,10 +35,9 @@ function SearchBox() {
 
     const value = event.target.value;
     setFormValue(value);
-    let results: MovieData[] = [];
-    if (value !== "") results = (await getMovies(value)).data.results;
-
-    setMovies(results);
+    let results: MovieData[] | undefined = [];
+    if (value !== "") results = (await getMovies(value))?.data.results;
+    if (results !== undefined) setMovies(results);
   };
 
   return (

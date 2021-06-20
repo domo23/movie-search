@@ -1,14 +1,54 @@
-.main {
+@media screen and (min-width: 1600px) {
+  .main {
     flex: 0 1 25%;
+    height: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px){
+  .main {
+    flex: 0 1 33%;
+    height: 50%;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .main {
+    flex: 0 1 50%;
+    height: 50%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  .main {
+    flex: 0 1 100%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main {
+    flex: 0 1 100%;
+    height: 100%;
+  }
+}
+
+.main {
+    min-height: 400px;
     padding: 15px;
-    margin: 10px;
     box-sizing: border-box;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
+  box-sizing: border-box;
 }
 
 /* On mouse-over, add a deeper shadow */

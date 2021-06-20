@@ -1,23 +1,54 @@
 .main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 50px;
-    background-color: lightseagreen;
-    padding: 5px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  background-color: lightseagreen;
+  padding: 5px 20px;
 }
 
-.title {
-    font-size: 2.1rem;
-    font-weight: 800;
-    color: white;
-    font-family: sans-serif;
+@media screen and (max-width: 500px) {
+  .title {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 501px) {
+    .titleMobile {
+      display: none;
+    }
+  }
+
+.title, .titleMobile {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: white;
+  font-family: sans-serif;
 }
 
 .forms {
-    display: flex; 
+  display: flex;
+  align-items: center;
 }
 
 .searchBox {
-    padding-right: 10px;
+  padding: 0px 10px;
+}
+
+.loader {
+  border: 5px solid white; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
