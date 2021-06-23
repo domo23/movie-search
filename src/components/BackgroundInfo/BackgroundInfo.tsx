@@ -1,12 +1,12 @@
 import styles from './BackgroundInfo.module.css'
 
-type Props = {
+export type Props = {
     msg: string
 }
 
 function BackgroundInfo({msg}: Props) {
     return (
-        <div className={styles.main}>{msg}</div>
+        <div className={styles.main} data-testid="background-info">{msg}</div>
     )
 }
 

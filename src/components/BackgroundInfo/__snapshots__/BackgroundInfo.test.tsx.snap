@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`background info component snapshot 1`] = `
+<div
+  class="main"
+  data-testid="background-info"
+/>
+`;

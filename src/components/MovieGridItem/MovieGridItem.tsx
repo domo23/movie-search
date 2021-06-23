@@ -7,7 +7,7 @@ type Props = {
 
 function MovieGridItem({ movie }: Props) {
   return (
-    <div className={styles.main}>
+    <div className={styles.main} data-testid="movie-grid-item">
       <div className={styles.card}>
         <h3>{movie.title}</h3>
         <h5>
