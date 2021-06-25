@@ -1,29 +1,29 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./SearchBox.module.css";
-import { useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../../state";
 import { debounce } from "lodash";
 
-function SearchBox() {
+export type Props = {
+  onChange: (value: string) => void
+}
+
+function SearchBox({onChange}: Props) {
   const [formValue, setFormValue] = useState("");
-  const dispatch = useDispatch();
-  const {setMovies} = bindActionCreators(actionCreators, dispatch);
 
   const handleChange = async function (
     event: React.ChangeEvent<HTMLInputElement>
   ) {
-    if (formValue === event.target.value) return;
     const value = event.target.value;
+    if (formValue === value) return;
     setFormValue(value);
-    setMovies(value);
+    onChange(value);
   };
 
   return (
-    <div className={styles.main}>
+    <div className={styles.main} data-testid="search-box">
       <form>
         <input
+          data-testid="search-box-input"
           className={styles.searchInput}
           placeholder="Search movie..."
           type="text"

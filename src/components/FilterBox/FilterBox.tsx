@@ -1,12 +1,10 @@
-import { useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../../state";
 import styles from "./FilterBox.module.css";
 
-function FilterBox() {
-  const dispatch = useDispatch();
-  const { setFilter } = bindActionCreators(actionCreators, dispatch);
+export type Props = {
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void
+}
 
+function FilterBox({onChange}: Props) {
   const getYears = function () {
     const START_YEAR = 1977;
     const length = new Date().getFullYear() - START_YEAR + 1;
@@ -14,19 +12,15 @@ function FilterBox() {
   };
   const years = getYears();
 
-  const handleChange = function (event: React.ChangeEvent<HTMLSelectElement>) {
-    const filter = Number(event.target.value);
-    setFilter(filter);
-  };
-
   return (
-    <div className={styles.main}>
+    <div className={styles.main} data-testid="filter-box">
       <form>
         <select
           id="years"
           name="years"
-          onChange={handleChange}
+          onChange={onChange}
           className={styles.select}
+          data-testid="filter-box-select"
         >
           {years.map((year) => (
             <option key={year} value={year}>
