@@ -1,24 +1,18 @@
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import BackgroundInfo from "./BackgroundInfo";
-import { Props } from "./BackgroundInfo";
+import '@testing-library/jest-dom/extend-expect';
 
-function renderBackgroundInfo(props: Partial<Props> = {}) {
-  const defaultProps: Props = {
-    msg: "",
-  };
-  return render(<BackgroundInfo {...defaultProps} {...props} />);
-}
+it('background info component snapshot', () => {
+    const { getByTestId } = render(<BackgroundInfo msg=''></BackgroundInfo>);
+    const module = getByTestId('background-info');
 
-it("render background msg, snapshot test", () => {
-  const { getByTestId } = renderBackgroundInfo();
-  const element = getByTestId("background-info");
-  expect(element).toMatchSnapshot();
-});
+    expect(module).toMatchSnapshot();
+})
 
-it("test background msg", async () => {
-  const msg = 'test string';
-  const { getByTestId } = renderBackgroundInfo({ msg });
-  const element = getByTestId("background-info");
-  
-  expect(element).toHaveTextContent(msg);
-});
+it('should contain msg text', () => {
+    const msg = "test message";
+    const { getByTestId } = render(<BackgroundInfo msg={msg}></BackgroundInfo>);
+    const module = getByTestId('background-info');
+
+    expect(module).toHaveTextContent(msg);
+})

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render background msg, snapshot test 1`] = `
+exports[`background info component snapshot 1`] = `
 <div
   class="main"
   data-testid="background-info"

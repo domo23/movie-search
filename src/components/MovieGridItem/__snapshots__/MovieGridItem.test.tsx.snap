@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`movie grid item component snapshot 1`] = `
+<div
+  class="main"
+  data-testid="movie-grid-item"
+>
+  <div
+    class="card"
+  >
+    <h3>
+      Title
+    </h3>
+    <h5>
+      Director
+      , 
+      23-06-2021
+    </h5>
+    <div
+      class="openingCrawl"
+    >
+      Beginning...
+    </div>
+  </div>
+</div>
+`;
