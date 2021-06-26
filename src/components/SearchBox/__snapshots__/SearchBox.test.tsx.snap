@@ -1,21 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sets movies based on input 1`] = `
-<div
-  class="main"
-  data-testid="search-box"
->
-  <form>
-    <input
-      class="searchInput"
-      data-testid="search-box-input"
-      placeholder="Search movie..."
-      type="text"
-    />
-  </form>
-</div>
-`;
-
 exports[`sets movies based on input, snapshot test 1`] = `
 <div
   class="main"

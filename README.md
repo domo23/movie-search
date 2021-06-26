@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Movie Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple react webpage with api filtering that relies on [https://swapi.dev/](swapi).
+Webpage is awailable to browse on [https://domo23.github.io/movie-search/](github pages).
+
 
 ## Available Scripts
 
