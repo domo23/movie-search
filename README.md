@@ -1,7 +1,7 @@
 # Movie Search
 
-Simple react webpage with api filtering that relies on [https://swapi.dev/](swapi).\
-Webpage is available to browse on [https://domo23.github.io/movie-search/](github pages).
+Simple react webpage with api filtering that relies on [swapi](https://swapi.dev/).\
+Webpage is available to browse on [github pages](https://domo23.github.io/movie-search/).
 
 
 ## Available Scripts
